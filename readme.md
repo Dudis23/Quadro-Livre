@@ -1,0 +1,1 @@
+ficou vazio as postagens mas não deu muita vontade de pegar as conversas de IA imitando gente, já que é mais um conceito eu deixei em branco, mais para frente quando for implementar um banco de dados eu pense em fazer algo do tipo
