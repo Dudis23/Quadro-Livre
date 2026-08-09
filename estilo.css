@@ -141,13 +141,14 @@ main a:hover {
 
 main {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 50px;
-    
-    
-    width: 200px;
+    flex-wrap: wrap;
+
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .post {
@@ -159,11 +160,11 @@ main {
     text-align: left;
     width: 100%;
     max-width: 900px;
+    box-sizing: border-box;
     margin: 10px 0 10px auto;
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
-    width: 900px;
     gap: 10px;
 }
 
@@ -303,6 +304,11 @@ footer {
     gap: 5px;
 }
 
+#postagens {
+    flex: 1;
+    min-width: 0;
+}
+
 section {
     margin-bottom: 40px;
 
@@ -318,5 +324,42 @@ h2 {
 
 p {
     line-height: 1.7;
+}
+
+/* Responsivo - celular */
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    aside {
+        width: 100%;
+        order: -1;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .post,
+    .postar {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        margin: 8px 5px;
+    }
+
+    nav input[type="search"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
