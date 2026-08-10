@@ -1,3 +1,16 @@
+/* Container principal */
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
 /* Seletor de elemento */
 body {
@@ -5,22 +18,40 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #acaeb1;
     color: #222;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* aside */
 aside {
     width: 220px;
+    flex-shrink: 0;
+
     background: #f5f5f5;
     padding: 20px;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+
+
 /* Cabeçalho */
+
+
 header {
     background: #1976d2;
     color: white;
     padding: 20px;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
@@ -40,14 +71,12 @@ nav {
 }
 
 nav ul {
+    display: flex;
     list-style: none;
+    gap: 15px;
     padding: 10px;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 nav input[type="search"] {
@@ -56,7 +85,8 @@ nav input[type="search"] {
     border-radius: 4px;
     width: 200px;
     margin-top: 10px;
-    text-align: center;
+    text-align: center; 
+    display: flex;
 }
 
 nav a {
@@ -68,7 +98,6 @@ nav a {
     margin: 20px 10px;
     border-radius: 4px;
     text-align: center;
-    display: inline-block;
 }
 
 nav a:hover {
@@ -78,22 +107,20 @@ nav a:hover {
 
 /* ID */
 #conteudo {
+    flex: 1;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Postagens */
-.postagens .post {
-    margin-bottom: 20px;
+.postagens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
-/* Main */
-main {
-    width: 200px;
-}
-
-main > * {
-    margin-bottom: 50px;
-}
+/* Post */
 
 main a {
     margin-top: 20px;
@@ -102,14 +129,28 @@ main a {
     font-weight: bold;
     background: #1976d2;
     padding: 8px 13px;
-    display: inline-block;
+
+    display: inline-flex;
+    align-items: left;
+    justify-content: flex-start;
 }
 
 main a:hover {
     background: #1355a1;
 }
 
-/* Post */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .post {
     background: white;
     padding: 20px;
@@ -117,17 +158,14 @@ main a:hover {
     border-radius: 8px;
     outline: 2px solid transparent;
     text-align: left;
+    width: 100%;
     max-width: 900px;
-    width: 900px;
-    margin: 10px 0 10px auto;
-}
-
-.post > * {
-    margin-bottom: 10px;
-}
-
-.post:hover {
-    outline: 2px solid #1976d2;
+    box-sizing: border-box;
+    margin: 10px auto;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .postar {
@@ -136,13 +174,24 @@ main a:hover {
     border: 1px solid #ccc;
     border-radius: 8px;
     outline: 2px solid transparent;
+
     width: 100%;
     max-width: 900px;
-    margin: 10px 0 10px auto;
+    margin: 10px auto;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.post:hover {
+    outline: 2px solid #1976d2;
 }
 
 /* Info do post */
 .info {
+    display: flex;
+    justify-content: space-between;
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
@@ -153,17 +202,15 @@ main a:hover {
     line-height: 1.6;
 }
 
-/* Ações */
+/* Ações (like / deslike com imagem) */
 .acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
     margin-top: 15px;
 }
 
-.acoes img,
-.acoes button {
-    margin-right: 10px;
-}
-
-/* Ícones */
+/* Ícones dos botões */
 .icone {
     width: 32px;
     height: 32px;
@@ -172,6 +219,10 @@ main a:hover {
     border-radius: 6px;
     background: #f5f5f5;
     transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icone:hover {
@@ -179,7 +230,8 @@ main a:hover {
     transform: scale(1.05);
 }
 
-/* Tabela */
+/* tabela */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -187,8 +239,7 @@ table {
     background: white;
 }
 
-th,
-td {
+th, td {
     border: 1px solid #444;
     padding: 12px;
     text-align: center;
@@ -199,19 +250,17 @@ th {
     color: white;
 }
 
-/* Formulário */
+/* formulário */
+
 form {
     background: white;
     padding: 20px;
     margin: auto;
     width: 100%;
-}
-
-form > * {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
 }
 
 input,
@@ -224,6 +273,7 @@ textarea {
 
 textarea {
     height: 150px;
+
 }
 
 input:focus,
@@ -241,21 +291,30 @@ textarea:focus {
 }
 
 /* Rodapé */
+
 footer {
     margin-top: 40px;
     background: #263238;
     color: white;
     text-align: center;
     padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-/* Section */
+#postagens {
+    flex: 1;
+    min-width: 0;
+}
+
 section {
     margin-bottom: 40px;
-}
 
-section > * {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 h2 {
@@ -265,5 +324,42 @@ h2 {
 
 p {
     line-height: 1.7;
+}
+
+/* Responsivo - celular */
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    aside {
+        width: 100%;
+        order: -1;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .post,
+    .postar {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        margin: 8px 5px;
+    }
+
+    nav input[type="search"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
