@@ -1,0 +1,65 @@
+/* Ajustes pequenos: o visual vem do Bootstrap */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* a navbar fixa (sticky-top) não cobre o título ao clicar nos links */
+section {
+    scroll-margin-top: 80px;
+}
+
+.banner-img {
+    height: 420px;
+    object-fit: cover;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.legenda-img {
+    width: 100%;
+    max-width: 420px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.icone {
+    width: 18px;
+    height: auto;
+    vertical-align: -3px;
+}
+
+.form-floating > .area-ideia {
+    height: 140px;
+}
+
+
+/* legenda do carousel em faixa escura para não brigar com o texto do banner */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 8px;
+    padding: 8px 16px;
+    bottom: 36px;
+}
+
+.carousel-caption h2 {
+    font-size: 1.6rem;
+}
+
+/* links da navbar com mais contraste */
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #fff;
+}
